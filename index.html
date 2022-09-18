@@ -1,0 +1,144 @@
+<head>
+    <title>Foragers Entry Passes.</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo2.svg">
+</head>
+<style>
+    * {
+        font-family: 'Varela Round', 'Averta Demo', sans-serif;
+        font-size: 24px;
+        color: rgb(53, 53, 53)
+    }
+
+    body {
+        position: relative;
+        background-color: #F2F5F6;
+        background-image:
+            url("assets/img/3.svg"),
+            url("assets/img/2.svg"),
+            url("assets/img/1.svg");
+        background-position: center 100%;
+        background-repeat: repeat-x;
+        background-size: 200vh;
+        transition: 1.2s ease-out;
+    }
+
+
+
+    *::selection {
+        color: white;
+        background: #d4691b
+    }
+
+
+    input {
+        background-color: #E6E6E6;
+        padding: 14px 16px;
+        border: none;
+        border-radius: 8px;
+        transition: 0.4s;
+        width: 350px;
+    }
+
+    input:focus {
+        border: none;
+        outline: none;
+    }
+
+    input::placeholder {
+        opacity: 0.42;
+        transition: 0.4s;
+    }
+
+    input:focus::placeholder {
+        opacity: 0.69;
+        font-weight: 450px;
+    }
+
+    form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        background-color: #ecad00;
+        color: white;
+        transition: 0.1s ease-in;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 19px;
+    }
+
+    .btn:disabled {
+        background-color: whitesmoke;
+        color: rgb(150, 150, 150);
+        cursor: initial;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 1px 11px -3px #0000005b;
+        padding: 16px 18px;
+    }
+
+    .input-parent {
+        margin-bottom: 30px;
+    }
+
+    #header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        margin-bottom: 0px;
+        width: 330px;
+    }
+</style>
+<script>
+
+    var mc;
+    window.onload = () => {
+        mc = document.body;
+        var all = mc.getElementsByTagName('INPUT');
+        for (var i = 0; i < all.length; i++) {
+            all[i].addEventListener("mouseenter", function () {
+                setDim(150);
+            });
+            all[i].addEventListener("mouseout", function () {
+                setDim(120);
+            });
+        }
+    };
+    var b_size;
+   
+    function followMouse(e) {
+        mc.style.setProperty('background-position-x', (15 + e.clientX / 0.3) + 'px, ' + (15 + e.clientX / 0.7) + 'px, ' + (30 + e.clientX / 1) + 'px');
+    }
+</script>
+
+<body class="cursor" onmousemove="followMouse(event)">
+
+
+    <form method="get" action="verifier.php">
+        <div id="header">
+            <img src="assets/img/logo2.svg" width="270px">
+        </div>
+
+        <div class="input-parent">
+            <input id="1" name="ticket" placeholder="Team ID" onkeyup="done(event)" required />
+
+        </div>
+
+        <input id="bn" type="submit" class="btn" value="View Pass" />
+
+
+    </form>
+
+</body>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo2.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foragers Entry Tickets</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="ticket-system">
+        <div class="top-logo">
+            <img src="assets/img/logo2.svg" id="top-logo">
+            
+            
+        </div>
+        <div class="top">
+
+            <!-- <h1 class="title">Your Attendance & Refreshment Pass</h1> -->
+            <div class="printer" />
+        </div>
+        <div class="receipts-wrapper">
+            <div class="receipts">
+
+                <div class="receipt">
+                    <div id="udaan">
+                        <img src="assets/img/foragers.svg" width="170px" >
+                        
+                    </div>
+                    <!-- <div class="slogan">
+                            <p id="slogan">
+                                Your Attendance & Refreshment Pass
+                            </p>
+                        </div> -->
+
+
+                    <!-- <div class="route">
+                        
+                        <h2>from</h2>
+                        <svg class="plane-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510">
+                            <path fill="#d4691b"
+                                d="M497.25 357v-51l-204-127.5V38.25C293.25 17.85 275.4 0 255 0s-38.25 17.85-38.25 38.25V178.5L12.75 306v51l204-63.75V433.5l-51 38.25V510L255 484.5l89.25 25.5v-38.25l-51-38.25V293.25l204 63.75z" />
+                        </svg>
+                        <h2>to</h2>
+                    </div> -->
+                    <div class="details">
+                        <div class="item">
+                            <span>Team Name</span>
+                            <h3>
+                                <?php echo $team_name; ?>
+                            </h3>
+                        </div>
+                        <div class="item">
+                            <span>Team ID</span>
+                            <h3><?php echo $team_id; ?></h3>
+                        </div>
+                        <div class="item">
+                            <span>Arrival at event</span>
+                            <h3>19th Sep 2022 08:15 am</h3>
+                        </div>
+                        <div class="item">
+                            <span>Gate Closes</span>
+                            <h3>08:45 am</h3>
+                        </div>
+                        <div class="item">
+                            <span>Venue</span>
+                            <h3>Auditorium, VIT Bhopal, Sehore-466114</h3>
+                        </div>
+                        <div class="item">
+                            <span>Team Leader</span>
+                            <h3><?php echo $lead_name; ?> <?php echo $lead_reg; ?></h3>
+                        </div>
+                        <div class="item">
+                            <span>Team Members</span>
+                            <h3><?php echo $members; ?></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="receipt qr-code" id="footer-banner">
+                    <img src="https://chart.googleapis.com/chart?cht=qr&chl=<?php echo $team_id; ?>+<?php echo $lead_name; ?>+<?php echo $lead_reg; ?>+<?php echo $members; ?>&chs=150x150&chld=L|0"
+                        class="qr" />
+                    <div class="description">
+                        <h2><b>The Foragers</b></h2>
+                        <p>QR for Attendance and Refreshments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 400px;">
+            <span id="footer-link" >
+                <span style="color:#ff914d;">Hosted with</span>
+                <a href="https://thecyberdelta.com" style="text-decoration: none; color:#ffffff;">TheCyberDelta</a><span style="color:#119222;"> for Igniters Club.</span>
+            </span>
+        </div>
+    </main>
+</body>
+
+</html>
